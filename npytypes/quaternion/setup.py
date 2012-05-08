@@ -9,7 +9,8 @@ def configuration(parent_package='', top_path=None):
     from numpy.distutils.misc_util import Configuration
     config = Configuration('quaternion', parent_package, top_path)
     config.add_extension('numpy_quaternion', ['quaternion.h', 'quaternion.c',
-                                             'numpy_quaternion.c'])
+                                              'numpy_quaternion.c'],
+                         extra_compile_args=['-std=c99'])
     return config
 
 if __name__ == "__main__":
